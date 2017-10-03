@@ -14,6 +14,9 @@
  3Exemplo de pontos que forma uma triangulo: 
  a(2,15),b(16,3),c(29,4)
  
+ 4Exemplo de pontos que forma uma triangulo: 
+ a(23,44),b(3,23),c(44,2)
+ 
 */
 
 typedef struct ponto{
@@ -34,7 +37,8 @@ int main(){
 	Ponto c;
 	int i;
 	int j;
-     
+	
+     printf("\nO TAMANHO 50X50\n");
      printf("Digite o valor do primeiro ponto\n");
      printf("X: ");
      scanf("%d",&a.x);
@@ -56,7 +60,7 @@ int main(){
 	
 	int area = calculaArea(a, b, c);
 	
-	if(area < 0)
+	if(area <= 0)
 		area = -area;
 	printf(" Area e' : %d\n", area);
 	
@@ -70,15 +74,15 @@ int main(){
 		q.y = j;
 
 		AB = calculaArea(a, b, q);
-		if(AB < 0)
+		if(AB <= 0)
 			AB = -AB;
 	
 		AC = calculaArea(a, c, q);
-		if(AC < 0)
+		if(AC <= 0)
 			AC = -AC;
 		
 		BC = calculaArea(b, c, q);
-		if(BC < 0)
+		if(BC <= 0)
 			BC = -BC;
 
 
