@@ -6,25 +6,40 @@ module PiscaLeds(
 	output [9:0] LEDR
 
 );
-   reg [25:0] cont = 0;
-	reg luz;
-	
-	assign LEDG = luz;
-	assign LEDR = SW;
-	
-	always @(posedge CLOCK_50) begin 
-	  
-	  if (cont == 50000000)  begin
-			luz = ~luz;
-			cont = 0;
-	  end 
-	  else begin
-	    cont = cont + 1;
-	  end
-	    
+reg[31:0] counter;
+reg[3:0] soma=1;
+
+always @(posedge CLOCK_50)
+begin
+	if(counter<=50000000)
+	begin
+		counter<= counter+soma;
 	end
+	else
+	begin
+		counter<=0;
+		LEDR[0]<=~LEDR[0];
+	end
+		if(SW[0]==1)
+		begin
+			soma=10;
+		end
+		if(SW[1]==1)
+		begin
+			soma=30;
+		end
+		if(SW[2]==1)
+		begin
+			soma=60;
+		end
+	if(counter == 25000000)
+	begin 
+		LEDG <=~LEDG;
+	end
+		
 	
-endmodule 
+end
+endmodule
 
 
 module testbench;
