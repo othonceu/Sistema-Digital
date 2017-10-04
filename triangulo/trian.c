@@ -31,14 +31,22 @@ int calculaArea(Ponto a, Ponto b, Ponto c){
 }
 
 int main(){
+<<<<<<< HEAD
 	
+=======
+>>>>>>> 07a252b172bc3a7045af0814bc11c80aa468eaf0
 	Ponto q;
 	Ponto a;
 	Ponto b;
 	Ponto c;
 	int i;
 	int j;
+<<<<<<< HEAD
      printf("O TAMANHO 50X50\n");
+=======
+	
+     printf("\nO TAMANHO 50X50\n");
+>>>>>>> 07a252b172bc3a7045af0814bc11c80aa468eaf0
      printf("Digite o valor do primeiro ponto\n");
      printf("X: ");
      scanf("%d",&a.x);
