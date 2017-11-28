@@ -22,16 +22,7 @@ module sing(
     wire signed [22:0] Mult1;
     wire signed [22:0] Mult2;
 
-
-    assign Sub1 = PTX - P2X;
-    assign Sub2 = P1Y - P2Y;
-    assign Sub3 = P1X - P2X;
-    assign Sub4 = PTY - P2Y;
-
-    assign Mult1 = Sub1 * Sub2;
-    assign Mult2 = Sub3 * Sub4;
-
-    assign Sub5 = Mult1 - Mult2;
+    assign Sub5 =(((PTX * (P1Y - P2Y)) + (P2X * (P2Y - PTY)) + (P2X * (PTY - P2Y)))/2);
 
     assign sin = (Sub5 >= 0) ? 1 : 0;
 
