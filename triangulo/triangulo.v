@@ -67,27 +67,27 @@ module PointInTriangle(
 
     always @ (clk) begin
             if(count == 0) begin
-                P1X = -6;
-                P1Y = -1;
+                P1X = 2;
+                P1Y = 15;
 
-                P2X =  3;
+                P2X =  16;
                 P2Y =  3;
 
-                P3X =  3;
-                P3Y = -3;
+                P3X =  29;
+                P3Y = 4;
 
                 count <= count + 1;
             end
 
             if(count == 1) begin
-                P1X =  20;
-                P1Y = -2;
+                P1X =  23;
+                P1Y = 44;
 
-                P2X =  -1;
-                P2Y =   8;
+                P2X =  3;
+                P2Y =   23;
 
-                P3X =  20;
-                P3Y =  12;
+                P3X =  44;
+                P3Y =  2;
 
                 count <= count + 1;
             end
