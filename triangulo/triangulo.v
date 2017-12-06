@@ -68,27 +68,27 @@ module PointInTriangle(
 
     always @ (clk) begin
             if(count == 0) begin
-                P1X = -6;
-                P1Y = -1;
+                P1X = -10;
+                P1Y = -2;
 
-                P2X =  3;
-                P2Y =  3;
+                P2X =  4;
+                P2Y =  5;
 
-                P3X =  3;
-                P3Y = -3;
+                P3X =  2;
+                P3Y = -4;
 
                 count <= count + 1;
             end
 
             if(count == 1) begin
-                P1X =  20;
-                P1Y = -2;
+                P1X =  22;
+                P1Y = -1;
 
                 P2X =  -1;
-                P2Y =   8;
+                P2Y =   6;
 
                 P3X =  20;
-                P3Y =  12;
+                P3Y =  15;
 
                 count <= count + 1;
             end
@@ -125,11 +125,11 @@ module test;
         $dumpvars(0, P);
         #1
         clk <= 1;
-        PX <= -3;
-        PY <= 3;
+        PX <= -4;
+        PY <= 2;
         #1
-        PX <= -14;
-        PY <=  12;
+        PX <= -12;
+        PY <=  10;
         #10
 
         #1
