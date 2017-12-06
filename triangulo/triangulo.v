@@ -22,7 +22,16 @@ module sing(
     wire signed [22:0] Mult1;
     wire signed [22:0] Mult2;
 
-    assign Sub5 =(((PTX * (P1Y - P2Y)) + (P2X * (P2Y - PTY)) + (P2X * (PTY - P2Y)))/2);
+
+    assign Sub1 = PTX - P2X;
+    assign Sub2 = P1Y - P2Y;
+    assign Sub3 = P1X - P2X;
+    assign Sub4 = PTY - P2Y;
+
+    assign Mult1 = Sub1 * Sub2;
+    assign Mult2 = Sub3 * Sub4;
+
+    assign Sub5 = Mult1 - Mult2;
 
     assign sin = (Sub5 >= 0) ? 1 : 0;
 
@@ -58,27 +67,27 @@ module PointInTriangle(
 
     always @ (clk) begin
             if(count == 0) begin
-                P1X = 2;
-                P1Y = 15;
+                P1X = -6;
+                P1Y = -1;
 
-                P2X =  16;
+                P2X =  3;
                 P2Y =  3;
 
-                P3X =  29;
-                P3Y = 4;
+                P3X =  3;
+                P3Y = -3;
 
                 count <= count + 1;
             end
 
             if(count == 1) begin
-                P1X =  23;
-                P1Y = 44;
+                P1X =  20;
+                P1Y = -2;
 
-                P2X =  3;
-                P2Y =   23;
+                P2X =  -1;
+                P2Y =   8;
 
-                P3X =  44;
-                P3Y =  2;
+                P3X =  20;
+                P3Y =  12;
 
                 count <= count + 1;
             end
